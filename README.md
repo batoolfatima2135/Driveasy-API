@@ -53,7 +53,6 @@
 
 - **Car Booking**
 - **Add a Car**
-- **Delete a Car**
 - **Get details of a Car**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -163,6 +162,12 @@ it will run the the server on ```localhost:3000```
 - GitHub: [@githubhandle](https://github.com/batoolfatima2135)
 - Twitter: [@twitterhandle](https://twitter.com/batool2135)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/batool-fatima-515531196/)
+
+👤 **OMAIDU OTHNIEL**
+
+- GitHub: (https://github.com/othniel2471)
+- Twitter: (https://twitter.com/@Oomaidu)
+- LinkedIn: (https://www.linkedin.com/in/othniel-omaidu-3350a9164)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
