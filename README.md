@@ -64,13 +64,13 @@
 
 - [Front end Link](https://github.com/batoolfatima2135/driveasy)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📖 API Documentation link <a name="documentation"></a>
 
 - [documentation Link](....)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
