@@ -2,7 +2,7 @@
 
 <div align="center">
 
-  <h1><b>driveasy-api</b></h1>
+  <h1><b>Driveasy-API</b></h1>
 
 </div>
 
@@ -188,7 +188,7 @@ it will run the the server on ```localhost:3000```
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/ichsansandy/rails-one-app/issues).
+Feel free to check the [issues page](https://github.com/batoolfatima2135/Driveasy-API/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
