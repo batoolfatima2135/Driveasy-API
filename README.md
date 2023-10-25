@@ -15,7 +15,6 @@
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
     - [Front-End](#Front-end)
-    - [API-Documentation](#📖-api-documentation-link)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -65,11 +64,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 📖 API Documentation link <a name="documentation"></a>
-
-- [documentation Link](....)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
