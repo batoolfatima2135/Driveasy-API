@@ -20,8 +20,6 @@ class CarsController < ApplicationController
     render json: @car
   end
 
-
-
   def car_params
     params.require(:car).permit(:name, :price, :color, :model, :image)
   end
