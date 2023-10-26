@@ -15,6 +15,11 @@ class CarsController < ApplicationController
     end
   end
 
+  def show
+    @car = Car.find(params[:id])
+    render json: @car
+  end
+
   def car_params
     params.require(:car).permit(:name, :price, :color, :model, :image)
   end
