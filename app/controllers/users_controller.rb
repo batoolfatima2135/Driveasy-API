@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     if @user.save
       render json: { status: 'created', message: 'Login successfully' }, status: :created
     else
-      render json: { status: 'not unique', message: 'Username already taken'}
+      render json: { status: 'not unique', message: 'Username already taken' }
     end
   end
 
