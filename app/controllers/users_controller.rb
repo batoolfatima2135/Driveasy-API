@@ -3,10 +3,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created
+      render json: { user: @user, message: 'Login successfully' }, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
-    end
+      error_message = "Username is already in use. Kindly use another username" if @user.errors[:username].include?("has already been taken")
+      render json: { errors: [error_message || @user.errors.full_messages], message: 'Login failed' }, status: :unprocessable_entity
+      end
   end
 
   private
