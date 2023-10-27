@@ -1,12 +1,20 @@
 class UsersController < ApplicationController
   def create
+  username = user_params[:username]
+  existing_user = User.find_by(username: username) # Use find_by instead of findby
+
+  if existing_user 
+    render json: { status: 'login' }
+  else
     @user = User.new(user_params)
 
     if @user.save
-      render json: { status: 'created', message: 'Login successfully' }, status: :created
+      render json: { status: 'login'}, status: :created
     else
-      render json: { status: 'not unique', message: 'Username already taken' }
+      render json: { status: 'error', message: 'Failed to create user', errors: @user.errors }, status: :unprocessable_entity
     end
+  end
+   
   end
 
   private
