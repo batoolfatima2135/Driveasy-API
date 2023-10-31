@@ -1,9 +1,13 @@
 class CarsController < ApplicationController
-  def index
-    @cars = Car.all
-
-    render json: @cars
+def index
+  @cars = Car.all
+  @cars.each do |car|
+    if car.image.attached?
+      car.image_url = url_for(car.image)
+    end
   end
+  render json: @cars
+end
 
   def create
     @car = Car.new(car_params)
