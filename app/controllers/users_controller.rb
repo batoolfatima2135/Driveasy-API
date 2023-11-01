@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
 
       if @user.save
-        render json: { status: 'login' }, status: :created
+        render json: { user: @user, status: 'login' }, status: :created
       else
         render json: { status: 'error', message: 'Failed to create user', errors: @user.errors },
                status: :unprocessable_entity
