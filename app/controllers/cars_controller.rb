@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    @cars = Car.all.order('created_at DESC')
     @cars.each do |car|
       car.image_url = url_for(car.image) if car.image.attached?
     end
