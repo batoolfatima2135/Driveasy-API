@@ -19,7 +19,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      render json: @reservation, status: :created, location: @reservation
+      render json: { car: @reservation, message: 'Car booked successfully' }, status: :created
     else
       render json: @reservation.errors, status: :unprocessable_entity
     end
