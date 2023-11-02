@@ -16,12 +16,23 @@ class ReservationsController < ApplicationController
 
   # POST /reservations
   def create
-    @reservation = Reservation.new(reservation_params)
-
-    if @reservation.save
-      render json: { car: @reservation, message: 'Car booked successfully' }, status: :created
+    car_id = reservation_params[:car_id]
+    date = reservation_params[:date]
+    puts car_id
+    puts date
+    car_reservation = Reservation.find_by(car_id:, date:)
+    puts 'car reservation'
+    puts car_reservation
+    if car_reservation
+      # Car is already reserved on this date, handle the error
+      render json: { status: "Not booked", message: 'This Car is already reserved on this date' }
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      @reservation = Reservation.new(reservation_params)
+      if @reservation.save
+        render json: { car: @reservation,  status: "booked", message: 'Car booked successfully' }, status: :created
+      else
+        render json: @reservation.errors, status: :unprocessable_entity
+      end
     end
   end
 
