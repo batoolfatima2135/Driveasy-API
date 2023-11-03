@@ -41,7 +41,11 @@ class ReservationsController < ApplicationController
 
   # DELETE /reservations/1
   def destroy
-    @reservation.destroy
+    if @reservation.destroy
+      render json: { status: 'Success' }
+    else
+      render json: { status: 'Failed' }
+    end
   end
 
   private
