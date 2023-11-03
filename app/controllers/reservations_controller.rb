@@ -3,10 +3,14 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/
   def index
-    username = params[:username]
-    user = User.find_by(username:)
-    @reservations = Reservation.where(user_id: user.id)
-    render json: @reservations
+    user_id = params[:user_id]
+    user = User.find(user_id)
+    if user.nil?
+      render json: { status: 'User not found', message: 'No user with the provided username' }, status: :not_found
+    else
+      @reservations = Reservation.where(user_id: user.id).includes(:car)
+      render json: @reservations.to_json(include: :car)
+    end
   end
 
   # GET /reservations/1
