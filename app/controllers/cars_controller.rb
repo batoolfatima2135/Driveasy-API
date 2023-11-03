@@ -9,11 +9,6 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(car_params)
-    if @car.image.attached?
-      @car.image_url = url_for(@car.image)
-    else
-      puts 'Image not attached to the car'
-    end
     if @car.save
       render json: { car: @car, message: 'Car created successfully' }, status: :created
     else

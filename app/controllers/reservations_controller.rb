@@ -9,6 +9,9 @@ class ReservationsController < ApplicationController
       render json: { status: 'User not found', message: 'No user with the provided username' }, status: :not_found
     else
       @reservations = Reservation.where(user_id: user.id).includes(:car)
+      @reservations.each do |reservation|
+        reservation.car.image_url = url_for(reservation.car.image) if reservation.car.image.attached?
+      end
       render json: @reservations.to_json(include: :car)
     end
   end
@@ -38,7 +41,11 @@ class ReservationsController < ApplicationController
 
   # DELETE /reservations/1
   def destroy
-    @reservation.destroy
+    if @reservation.destroy
+      render json: { status: 'Success' }
+    else
+      render json: { status: 'Failed' }
+    end
   end
 
   private
