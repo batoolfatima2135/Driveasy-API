@@ -10,7 +10,9 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     if @car.save
-      render json: { car: @car, message: 'Car created successfully' }, status: :created
+      @car_data = @car.as_json(include: :image)
+      @car_data['image_url'] = url_for(@car.image)
+      render json: { car: @car_data, message: 'Car created successfully' }, status: :created
     else
       render json: @car.errors, status: :unprocessable_entity
     end
