@@ -29,17 +29,16 @@ class CarsController < ApplicationController
     render json: @car_data
   end
 
-def destroy
-  @car = Car.find_by(id: params[:id])
-  
-  if @car
-    @car.destroy
-    render json: { message: 'Car deleted successfully', car: @car.as_json }, status: :ok
-  else
-    render json: { error: 'Car not found' }, status: :not_found
-  end
-end
+  def destroy
+    @car = Car.find_by(id: params[:id])
 
+    if @car
+      @car.destroy
+      render json: { message: 'Car deleted successfully', car: @car.as_json }, status: :ok
+    else
+      render json: { error: 'Car not found' }, status: :not_found
+    end
+  end
 
   def car_params
     params.require(:car).permit(:name, :price, :color, :model, :image)
