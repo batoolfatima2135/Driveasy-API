@@ -50,9 +50,13 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Car Booking**
-- **Add a Car**
-- **Get details of a Car**
+- **Add Car**
+- **Delete Car**
+- **Show details of Car**
+- **Show all Cars**
+- **Book Car**
+- **Show all Booking**
+- **Cancel Booking** 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
