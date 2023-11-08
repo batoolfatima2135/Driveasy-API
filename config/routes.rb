@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :reservations, only: [:index, :show,:create, :destroy]
+  resources :cars, only: [:index, :create, :show, :destroy]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :users, only: [:create]
 end
